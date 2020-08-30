@@ -1,0 +1,2 @@
+rootProject.name='SundevsTest'
+include ':app'

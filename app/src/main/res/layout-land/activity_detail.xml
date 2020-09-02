@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.view.DetailActivity"
+    android:padding="@dimen/dimen_8">
+
+    <TextView
+        android:id="@+id/title_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comicbook"
+        android:textSize="@dimen/dimen_26"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <ImageView
+        android:id="@+id/detail_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dimen_4"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@id/title_main"
+        app:layout_constraintStart_toEndOf="@id/gl1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/title_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl1"
+        android:layout_margin="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_8">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/characters_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/characters"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/dimen_20"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/dimen_8"/>
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/characters_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_characters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                tools:itemCount="3"/>
+
+            <TextView
+                android:id="@+id/teams_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teams"
+                app:layout_constraintTop_toBottomOf="@id/rv_characters"
+                app:layout_constraintStart_toStartOf="@id/rv_characters"
+                android:textSize="@dimen/dimen_20"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/dimen_8"/>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/teams_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_teams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                tools:itemCount="3"/>
+
+            <TextView
+                android:id="@+id/locations_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/locations"
+                app:layout_constraintTop_toBottomOf="@id/rv_teams"
+                app:layout_constraintStart_toStartOf="@id/rv_teams"
+                android:textSize="@dimen/dimen_20"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/dimen_8"/>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/locations_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_locations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/divider3"
+                tools:itemCount="3"/>
+
+            <TextView
+                android:id="@+id/concetps_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/concepts"
+                app:layout_constraintTop_toBottomOf="@id/rv_locations"
+                app:layout_constraintStart_toStartOf="@id/rv_locations"
+                android:textSize="@dimen/dimen_20"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/dimen_8"/>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/concetps_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_concepts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/divider4"
+                tools:itemCount="3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 # SundevsTest
 
-application created to consult comics using api
+application created to consult comics using external api
 
 developed in native android with MVP, using libraries like retrofit, eventbus, glide, etc.
 
